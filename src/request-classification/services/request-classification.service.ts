@@ -4,6 +4,7 @@ import { ClassificationConfigType } from 'src/common/config'
 
 import { RequestClassificationInput } from '../dtos/request-classification.input'
 import { RequestClassificationOut } from '../dtos/request-classification.out'
+import { NetworkType } from '../enums/network-type.enum'
 import { BlacklistRepository } from '../repositories/blacklist.repository'
 import { WhitelistRepository } from '../repositories/whitelist.repository'
 
@@ -44,7 +45,7 @@ export class RequestClassificationService {
     }
 
     // L2 - network type
-    if (dto.networkType === 'hosting') {
+    if (dto.networkType === NetworkType.hosting) {
       score += weights.l2_network_type
       reasons.push('L2: hosting network type')
     }
@@ -80,7 +81,7 @@ export class RequestClassificationService {
     return !!blackListed
   }
 
-  private evaluateHeaders(headers?: Record<string, any>): {
+  private evaluateHeaders(headers?: Record<string, unknown>): {
     suspicious: boolean
     reasons: string[]
   } {
@@ -92,9 +93,13 @@ export class RequestClassificationService {
       return { suspicious: true, reasons }
     }
 
-    const ua = (headers['user-agent'] || headers['User-Agent'])
-      ?.toString()
-      ?.toLowerCase()
+    const uaValue = headers['user-agent'] ?? headers['User-Agent']
+    let ua: string | undefined
+
+    if (typeof uaValue === 'string') {
+      ua = uaValue.toLowerCase()
+    }
+
     if (!ua) {
       reasons.push('L1: missing User-Agent')
       return { suspicious: true, reasons }

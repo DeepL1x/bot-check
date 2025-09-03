@@ -9,9 +9,8 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Bot Check MVP')
-    .setDescription('L0-L3 classification API (NestJS + MongoDB + Redis)')
+    .setDescription('L0-L3 classification API')
     .setVersion('0.1')
-    .addTag('classification')
     .build()
 
   const document = SwaggerModule.createDocument(app, config)
@@ -27,4 +26,5 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000)
 }
-bootstrap()
+
+void bootstrap()

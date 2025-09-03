@@ -11,7 +11,7 @@ export class RequestClassificationInput {
   @ApiProperty({ required: false, description: 'HTTP headers object' })
   @IsOptional()
   @IsObject()
-  headers?: Record<string, any>
+  headers?: Record<string, unknown>
 
   @ApiProperty({
     required: false,

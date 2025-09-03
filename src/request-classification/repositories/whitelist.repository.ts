@@ -37,7 +37,7 @@ export class WhitelistRepository {
       return (await this.whitelistModel.create({ ip })).toObject<Whitelist>()
     } catch (error) {
       if (error instanceof MongoServerError && error.code === 11000) {
-        throw new ConflictException('Ip already whitelisted')
+        throw new ConflictException('Ip is already whitelisted')
       }
       this.logger.error('Error during creation of whitelist record', {
         error,

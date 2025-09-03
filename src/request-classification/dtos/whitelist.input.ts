@@ -1,6 +1,3 @@
-import { IsIP } from 'class-validator'
+import { IpListItem } from './ip-list-item.dto'
 
-export class WhitelistInput {
-  @IsIP()
-  ip: string
-}
+export class WhitelistInput extends IpListItem {}

@@ -5,9 +5,11 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin',
+  plugins: [
+    '@typescript-eslint/eslint-plugin',
     'import',
-    'simple-import-sort',],
+    'simple-import-sort',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -29,7 +31,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'error',
 
     // Imports
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': 'off',
     'import/order': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
@@ -49,4 +51,14 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.spec.ts', '*.test.ts', '*.e2e-spec.ts'],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
+        '@typescript-eslint/unbound-method': 'off'
+      },
+    },
+  ],
 };
