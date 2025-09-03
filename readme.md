@@ -42,6 +42,7 @@ $ yarn docker:up
 # dev mode
 $ yarn docker:up:d
 ```
+**make sure you've created .env file before running docker commands**
 
 # API Technical Specification
 
