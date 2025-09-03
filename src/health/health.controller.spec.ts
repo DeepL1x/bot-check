@@ -1,7 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing'
-import { HealthController } from './health.controller'
-import supertest from 'supertest'
 import { INestApplication } from '@nestjs/common'
+import { Test, TestingModule } from '@nestjs/testing'
+import supertest from 'supertest'
+
+import { HealthController } from './health.controller'
 
 describe('HealthController', () => {
   let controller: HealthController

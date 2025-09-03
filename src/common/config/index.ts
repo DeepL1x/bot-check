@@ -32,7 +32,7 @@ const config: Config = {
       'go-http-client',
       'libwww-perl',
     ],
-    botThreshold: 0.7
+    botThreshold: 0.7,
   },
 }
 export default () => config

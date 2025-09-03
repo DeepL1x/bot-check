@@ -1,6 +1,7 @@
 import { ConflictException, Injectable } from '@nestjs/common'
-import { WhitelistRepository } from '../repositories/whitelist.repository'
+
 import { BlacklistRepository } from '../repositories/blacklist.repository'
+import { WhitelistRepository } from '../repositories/whitelist.repository'
 
 @Injectable()
 export class BlacklistService {

@@ -1,7 +1,8 @@
 import { Body, Controller, Post } from '@nestjs/common'
-import { RequestClassificationService } from '../services/request-classification.service'
-import { RequestClassificationOut } from '../dtos/request-classification.out'
+
 import { RequestClassificationInput } from '../dtos/request-classification.input'
+import { RequestClassificationOut } from '../dtos/request-classification.out'
+import { RequestClassificationService } from '../services/request-classification.service'
 
 @Controller('classify')
 export class RequestClassificationController {

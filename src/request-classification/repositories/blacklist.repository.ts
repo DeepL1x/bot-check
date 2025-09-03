@@ -6,9 +6,10 @@ import {
   Logger,
 } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { Model } from 'mongoose'
-import { Blacklist } from '../schemas/blacklist.schema'
 import { MongoServerError } from 'mongodb'
+import { Model } from 'mongoose'
+
+import { Blacklist } from '../schemas/blacklist.schema'
 import { Whitelist } from '../schemas/whitelist.schema'
 
 @Injectable()

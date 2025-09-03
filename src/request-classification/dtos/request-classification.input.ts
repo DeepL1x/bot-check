@@ -1,11 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import {
-  IsBoolean,
-  IsEnum,
-  IsIP,
-  IsObject,
-  IsOptional,
-} from 'class-validator'
+import { IsBoolean, IsEnum, IsIP, IsObject, IsOptional } from 'class-validator'
+
 import { NetworkType } from '../enums/network-type.enum'
 
 export class RequestClassificationInput {

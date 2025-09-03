@@ -1,8 +1,9 @@
 import { Test } from '@nestjs/testing'
 import { mockDeep } from 'jest-mock-extended'
-import { BlacklistService } from 'src/request-classification/services/blacklist.service'
-import { BlacklistController } from '../blacklist.controller'
 import { BlacklistInput } from 'src/request-classification/dtos/blacklist.input'
+import { BlacklistService } from 'src/request-classification/services/blacklist.service'
+
+import { BlacklistController } from '../blacklist.controller'
 
 describe(BlacklistController, () => {
   let controller: BlacklistController

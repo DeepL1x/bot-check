@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common'
-import { RequestClassificationInput } from '../dtos/request-classification.input'
-import { RequestClassificationOut } from '../dtos/request-classification.out'
 import { ConfigService } from '@nestjs/config'
 import { ClassificationConfigType } from 'src/common/config'
+
+import { RequestClassificationInput } from '../dtos/request-classification.input'
+import { RequestClassificationOut } from '../dtos/request-classification.out'
 import { BlacklistRepository } from '../repositories/blacklist.repository'
 import { WhitelistRepository } from '../repositories/whitelist.repository'
 

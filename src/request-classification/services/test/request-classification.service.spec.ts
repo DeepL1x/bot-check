@@ -1,15 +1,17 @@
-import { Test, TestingModule } from '@nestjs/testing'
-import { RequestClassificationService } from '../request-classification.service'
-import { WhitelistRepository } from 'src/request-classification/repositories/whitelist.repository'
-import { mockDeep } from 'jest-mock-extended'
-import { BlacklistRepository } from 'src/request-classification/repositories/blacklist.repository'
+import { beforeEach } from 'node:test'
+
 import { ConfigModule } from '@nestjs/config'
+import { Test, TestingModule } from '@nestjs/testing'
+import { mockDeep } from 'jest-mock-extended'
+import { Types } from 'mongoose'
 import config from 'src/common/config'
 import { RequestClassificationInput } from 'src/request-classification/dtos/request-classification.input'
 import { RequestClassificationOut } from 'src/request-classification/dtos/request-classification.out'
-import { Types } from 'mongoose'
-import { beforeEach } from 'node:test'
 import { NetworkType } from 'src/request-classification/enums/network-type.enum'
+import { BlacklistRepository } from 'src/request-classification/repositories/blacklist.repository'
+import { WhitelistRepository } from 'src/request-classification/repositories/whitelist.repository'
+
+import { RequestClassificationService } from '../request-classification.service'
 
 describe(RequestClassificationService, () => {
   let service: RequestClassificationService

@@ -1,11 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import {
-  IsOptional,
-  IsObject,
-  IsNumber,
-  IsString,
-  IsArray,
-} from 'class-validator'
+import { IsArray, IsNumber, IsString } from 'class-validator'
 
 export class RequestClassificationOut {
   @ApiProperty({ enum: ['human', 'bot'] })

@@ -1,8 +1,9 @@
 import { Test } from '@nestjs/testing'
-import { RequestClassificationController } from '../request-classification.controller'
-import { RequestClassificationService } from 'src/request-classification/services/request-classification.service'
-import { RequestClassificationInput } from 'src/request-classification/dtos/request-classification.input'
 import { mockDeep } from 'jest-mock-extended'
+import { RequestClassificationInput } from 'src/request-classification/dtos/request-classification.input'
+import { RequestClassificationService } from 'src/request-classification/services/request-classification.service'
+
+import { RequestClassificationController } from '../request-classification.controller'
 
 describe(RequestClassificationController, () => {
   let controller: RequestClassificationController

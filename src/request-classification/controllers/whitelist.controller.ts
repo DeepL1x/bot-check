@@ -1,7 +1,8 @@
 import { Controller, Delete, Param, Post } from '@nestjs/common'
-import { WhitelistService } from '../services/whitelist.service'
+
 import { WhitelistInput } from '../dtos/whitelist.input'
 import { WhitelistOut } from '../dtos/whitelist.out'
+import { WhitelistService } from '../services/whitelist.service'
 
 @Controller('whitelist')
 export class WhitelistController {

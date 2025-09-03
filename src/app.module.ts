@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
-import { RequestClassificationModule } from './request-classification/request-classification.module'
 import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
-import { HealthModule } from './health/health.module';
+
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 import config from './common/config'
+import { HealthModule } from './health/health.module'
+import { RequestClassificationModule } from './request-classification/request-classification.module'
 
 @Module({
   imports: [
